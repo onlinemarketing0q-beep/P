@@ -1,0 +1,46 @@
+<div class="point">
+      <i class="fa-solid fa-shield"></i>
+      <span>Risk Management Focused Strategy</span>
+    </div>
+
+    <div class="point">
+      <i class="fa-solid fa-fire"></i>
+      <span>Daily Free & Premium Market Analysis</span>
+    </div>
+
+  </div>
+</section>
+
+<div class="footer">
+  ©️ 2026 Gujarati Trader • All Rights Reserved
+</div>
+
+<!-- TRACKING SCRIPT -->
+<script>
+const PAGEVIEW_KEY = "gt_pageview_tracked";
+const SUBSCRIBE_KEY = "gt_subscribe_tracked";
+
+/* PAGE VIEW */
+if (!localStorage.getItem(PAGEVIEW_KEY)) {
+    fbq('track', 'PageView');
+    localStorage.setItem(PAGEVIEW_KEY, "true");
+}
+
+/* TELEGRAM CLICK */
+document.querySelector(".subscribe-btn").addEventListener("click", function () {
+
+    if (!localStorage.getItem(SUBSCRIBE_KEY)) {
+
+        fbq('track', 'Lead');
+        fbq('trackCustom', 'TelegramSubscribe', {
+            source: 'Landing Page',
+            platform: 'Telegram'
+        });
+
+        localStorage.setItem(SUBSCRIBE_KEY, "true");
+    }
+});
+</script>
+
+</body>
+</html>
